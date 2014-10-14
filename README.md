@@ -25,7 +25,7 @@ pflag正是设计来解决该类问题的工具，当然pflag使用场景可能�
    * feature user: 运行时表征一个使用flag的用户，可包含一些用户属性。
 
 ###使用示例
-1.step1: 增加ini配置
+step1: 增加ini配置
 ```
 [product]
 ;;新特性开关
@@ -41,7 +41,7 @@ features.MYFEATURE2.params.percent = 0.10
 [dev:product]
 features.MYFEATURE1.enabled = true
 ```
-2.step2: 增加代码开关
+step2: 增加代码开关
 ```
 // 载入配置
 PFlag_Features::loadIniConf(CONF_PATH . 'feature.ini');
@@ -75,8 +75,8 @@ CONF_PATH为配置文件所在路径。
 | group | 'default' | 标识feature所属的组, 暂未启用|
 
 注：
-1. 约定，使用仅特征开关功能时将type属性值设为release。e.g 示例的MYFEATURE1
-2. 在使用流量控制时，设置feature的type属性值为business，这时需要配置激活策略strategy。e.g 示例的MYFEATURE2
+>1. 约定，使用仅特征开关功能时将type属性值设为release。e.g 示例的MYFEATURE1
+>2. 在使用流量控制时，设置feature的type属性值为business，这时需要配置激活策略strategy。e.g 示例的MYFEATURE2
 
 ###激活策略Strategy
 
