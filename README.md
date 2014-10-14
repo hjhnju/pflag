@@ -7,12 +7,11 @@ pflag是一个管理php代码特性开关的lib库。
 pflag正是设计来解决该类问题的工具，当然pflag使用场景可能不局限于此，如下列出的pflag使用的主要场景：
 
    * 特性管理
-
-代码持续发布时，不同Feature开发进度不一，若某些Feature未完成时需要发布，可以通过控制Feature开关来隐藏Feature功能。
-
+   
+     代码持续发布时，不同Feature开发进度不一，若某些Feature未完成时需要发布，可以通过控制Feature开关来隐藏Feature功能。
    * 流量控制
-
-轻松控制让哪些用户要进入哪个版本，如某个新加入的特性可以仅开放给部分用户，以便进行AB-test实验。还可以指定特定策略来进行流量切换。
+   
+     轻松控制让哪些用户要进入哪个版本，如某个新加入的特性可以仅开放给部分用户，以便进行AB-test实验。还可以指定特定策略来进行流量切换。
 
 ###基本概念
    * release toggles: 为版本控制新建的特性开关
@@ -96,15 +95,15 @@ PFlag自带几种激活策略：ClientIp、Gradual、ReleaseDate
 
 根据客户端ip来判断是否激活特性，使用配置(以phpconfig为例）
 ```
-        'FEATUREX' => array(
-            'enabled' => true,
-            'type' => 'business',
-            'strategy' => 'ClientIp',
-            'params' => array(
-                'white_list' => array('172.22.163.158',
-                '172.23.*.*')
-            ),
-        ),
+'FEATUREX' => array(
+    'enabled' => true,
+    'type' => 'business',
+    'strategy' => 'ClientIp',
+    'params' => array(
+        'white_list' => array('172.22.163.158',
+        '172.23.*.*')
+    ),
+),
 ```
 
 #####Gradual
@@ -143,13 +142,13 @@ e.g 在做类似双11活动的代码可采用此发布策略
 通过实现接口PFlag_Interface_Strategy，你可以自定义策略类；
 如：新建的策略类PFlag_Strategy_YourStrategy，主要需要实现的方法
 ```
-    /**
-     * check if strategy is active 
-     * @param PFlag_Interface_Feature $feature
-     * @param PFlag_Interface_User $user
-     * @return true | false
-     */
-    public function isActive(PFlag_Interface_Feature $feature, PFlag_Interface_User $user=null);
+/**
+ * check if strategy is active 
+ * @param PFlag_Interface_Feature $feature
+ * @param PFlag_Interface_User $user
+ * @return true | false
+ */
+public function isActive(PFlag_Interface_Feature $feature, PFlag_Interface_User $user=null);
 ```
 
 配置文件：
