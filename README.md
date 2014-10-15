@@ -182,4 +182,4 @@ pflag最终目的是能为团队开发服务，提高敏捷效率。为自己的
 ###相关资料
    * 敏捷大师Martin Fowler的特性开关简介 http://martinfowler.com/bliki/FeatureToggle.html
    * c标志位管理 http://code.google.com/p/gflags/
-   * java标准位管理 http://www.togglz.org/
+   * java标志位管理 http://www.togglz.org/
