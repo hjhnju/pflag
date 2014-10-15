@@ -178,3 +178,8 @@ pflag最终目的是能为团队开发服务，提高敏捷效率。为自己的
 4. flag及时清理
    * release类型开关，上线功能稳定后的下个迭代删除
    * business类型开关，小流量转全流量后的下个迭代删除
+
+###相关资料
+   * 敏捷大师Martin Fowler的特性开关简介 http://martinfowler.com/bliki/FeatureToggle.html
+   * c标志位管理 http://code.google.com/p/gflags/
+   * java标准位管理 http://www.togglz.org/
